@@ -12,7 +12,7 @@ import { TaskDetails } from '../utils/task-details';
 const username: string = 'firstname.lastname';
 const password: string = 'password';
 // Enter the start date of the first week. Date must be on a Monday. Format must be dd-MMM-yyyy.
-const fromWeekStartDate: string = '30-Aug-2026';
+const fromWeekStartDate: string = '31-Aug-2026';
 
 test('API scraping', async ({ page }) => {
   let loginPage: LoginPage = new LoginPage(page);
