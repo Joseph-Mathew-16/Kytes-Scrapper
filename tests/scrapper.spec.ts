@@ -4,14 +4,17 @@ import { PendingTimesheetComponent } from '../pages/pending-timesheet-component'
 import { WorkListPage } from '../pages/work-list-page';
 import { TimesheetPage } from '../pages/timesheet-page';
 import { TimeEntry } from '../utils/time-entry';
+import { writePlainTextFile } from '../utils/plain-text-file-writer';
 import { writeExcelFile } from '../utils/excel-file-writer';
 import { TaskDetails } from '../utils/task-details';
 
-test('API scraping', async ({ page }) => {
-  const username: string = 'joseph.mathew';
-  const password: string = '1234@Banjo';
-  const fromWeekStartDate: string = '30-Mar-2026';
+// Enter username & password here.
+const username: string = 'firstname.lastname';
+const password: string = 'password';
+// Enter the start date of the first week. Date must be on a Monday. Format must be dd-MMM-yyyy.
+const fromWeekStartDate: string = '30-Aug-2026';
 
+test('API scraping', async ({ page }) => {
   let loginPage: LoginPage = new LoginPage(page);
   await loginPage.goToLoginPage();
   await loginPage.enterUsername(username);
@@ -35,7 +38,7 @@ test('API scraping', async ({ page }) => {
     let timesheetPage = new TimesheetPage(page);
     await timesheetPage.clickPreviousWeekButton();
     response = await responsePromise;
-    responseText= await response.text();
+    responseText = await response.text();
     responseJson = await response.json();
     startOfWeek = responseJson.timesheetData.startDayOfWeek;
     writePlainTextFile('response_storage/' + startOfWeek + '.json', responseText);
