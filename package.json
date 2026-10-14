@@ -1,0 +1,21 @@
+{
+  "name": "kytes-scrapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joseph-Mathew-16/Kytes-Scrapper.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Joseph-Mathew-16/Kytes-Scrapper/issues"
+  },
+  "homepage": "https://github.com/Joseph-Mathew-16/Kytes-Scrapper#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.5"
+  }
+}
